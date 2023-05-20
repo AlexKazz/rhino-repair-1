@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import { v4 as uuidv4 } from "uuid";
+import styles from "./Home.module.css";
 
 Modal.setAppElement("#__next");
 
@@ -64,8 +65,10 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <button onClick={openModal}>Add New Structure</button>
+    <div className={styles.home}>
+      <button onClick={openModal} className={styles.button}>
+        Add New Structure
+      </button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
         <h2>Structure Details</h2>
         <input
@@ -100,14 +103,19 @@ export default function Home() {
           onChange={handleInputChange}
         />
         <br />
-        <button onClick={handleSave}>Save</button>
+        <button onClick={handleSave} className={styles.button}>
+          Save
+        </button>
         <br />
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete} className={styles.button}>
+          Delete
+        </button>
       </Modal>
       {structures.map((structure) => (
         <div
           key={structure.id}
           onClick={() => handleStructureClick(structure.id)}
+          className={styles.structure}
         >
           {structure.title}
         </div>
