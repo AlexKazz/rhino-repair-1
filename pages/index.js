@@ -3,6 +3,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./Home.module.css";
+import StructureModal from "./StructureModal";
 
 Modal.setAppElement("#__next");
 
@@ -69,48 +70,15 @@ export default function Home() {
       <button onClick={openModal} className={styles.button}>
         Add New Structure
       </button>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-        <h2>Structure Details</h2>
-        <input
-          name="title"
-          placeholder="Title"
-          value={currentStructure.title}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input type="file" name="image" onChange={handleFileChange} />
-        <br />
-        <input
-          name="xCoordinate"
-          placeholder="X Coordinate"
-          value={currentStructure.xCoordinate}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input
-          name="yCoordinate"
-          placeholder="Y Coordinate"
-          value={currentStructure.yCoordinate}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input type="file" name="rhinoFile" onChange={handleFileChange} />
-        <br />
-        <textarea
-          name="notes"
-          placeholder="Notes"
-          value={currentStructure.notes}
-          onChange={handleInputChange}
-        />
-        <br />
-        <button onClick={handleSave} className={styles.button}>
-          Save
-        </button>
-        <br />
-        <button onClick={handleDelete} className={styles.button}>
-          Delete
-        </button>
-      </Modal>
+      <StructureModal
+        modalIsOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        currentStructure={currentStructure}
+        handleInputChange={handleInputChange}
+        handleFileChange={handleFileChange}
+        handleSave={handleSave}
+        handleDelete={handleDelete}
+      />
       {structures.map((structure) => (
         <div
           key={structure.id}
