@@ -1,21 +1,30 @@
 .container {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .circle {
-    position: absolute;
-    top: 40%; /* Adjust these values to position the dot */
-    left: 55%;
-    width: 15px;
-    height: 15px;
-    background: rgb(255, 0, 76);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  position: relative; /* add this */
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  max-width: 600px;
+  height: auto;
+}
+
+.image2 {
+  max-width: 300px; /* add this */
+  height: auto;
+}
+
+.circle {
+  position: absolute;
+  top: 40%; /* Adjust these values to position the dot */
+  left: 55%;
+  width: 15px;
+  height: 15px;
+  background: rgb(255, 0, 76);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1; /* add this */
+}

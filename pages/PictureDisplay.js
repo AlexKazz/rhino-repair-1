@@ -9,13 +9,17 @@ export default function PictureDisplay() {
   };
 
   return (
-    <div>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.imageContainer}>
         <img className={styles.image} src="/image1.jpg" alt="First" />
         <div className={styles.circle} onClick={handleClick} />
       </div>
       {showSecondPicture && (
-        <img className={styles.image} src="/image2.jpg" alt="Second" />
+        <img
+          className={`${styles.image} ${styles.image2}`}
+          src="/image2.jpg"
+          alt="Second"
+        />
       )}
     </div>
   );

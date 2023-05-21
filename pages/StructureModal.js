@@ -8,7 +8,7 @@ Modal.setAppElement("#__next");
 
 const customStyles = {
   content: {
-    width: "800px", // Increase this to make the modal wider
+    width: "1000px", // Set a max width here
     height: "600px",
     margin: "auto",
   },
