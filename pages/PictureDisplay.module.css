@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .circle {
+    position: absolute;
+    top: 55%; /* Adjust these values to position the dot */
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    background: blue;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  

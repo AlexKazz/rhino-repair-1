@@ -1,12 +1,14 @@
 // StructureModal.js
+import { useState } from "react";
 import Modal from "react-modal";
 import styles from "./Home.module.css";
+import PictureDisplay from "./PictureDisplay";
 
 Modal.setAppElement("#__next");
 
 const customStyles = {
   content: {
-    width: "400px",
+    width: "500px", // Increase this to make the modal wider
     height: "600px",
     margin: "auto",
   },
@@ -20,6 +22,8 @@ function StructureModal({
   handleFileChange,
   handleSave,
   handleDelete,
+  handleShowPicture,
+  showPicture,
 }) {
   return (
     <Modal
@@ -85,6 +89,10 @@ function StructureModal({
         onChange={handleFileChange}
       />
       <br />
+      <button onClick={handleShowPicture} className={styles.button}>
+        Display Picture
+      </button>
+      {showPicture && <PictureDisplay />}
       <div className={styles.inputField}>
         <label>Notes:</label>
         <textarea
@@ -94,6 +102,7 @@ function StructureModal({
           onChange={handleInputChange}
         />
       </div>
+
       <br />
       <button onClick={handleSave} className={styles.button}>
         Save
