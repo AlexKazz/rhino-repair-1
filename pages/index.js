@@ -20,6 +20,7 @@ export default function Home() {
   const [structures, setStructures] = useState([]);
   const [currentStructure, setCurrentStructure] = useState(defaultFormState);
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [showPicture, setShowPicture] = useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -27,7 +28,12 @@ export default function Home() {
 
   function closeModal() {
     setIsOpen(false);
+    setShowPicture(false);
   }
+
+  const handleShowPicture = () => {
+    setShowPicture(true);
+  };
 
   function handleInputChange(e) {
     setCurrentStructure({
@@ -78,6 +84,8 @@ export default function Home() {
         handleFileChange={handleFileChange}
         handleSave={handleSave}
         handleDelete={handleDelete}
+        handleShowPicture={handleShowPicture}
+        showPicture={showPicture}
       />
       {structures.map((structure) => (
         <div
