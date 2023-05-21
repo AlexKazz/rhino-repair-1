@@ -73,6 +73,12 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
+      <div className={styles.titleContainer}>
+        <h1 className={styles.title}>RHYHORN</h1>
+        <p className={styles.subtitle}>
+          An Application For Sharing 3D Rhino Models
+        </p>
+      </div>
       <button onClick={openModal} className={styles.button}>
         Add New Structure
       </button>
