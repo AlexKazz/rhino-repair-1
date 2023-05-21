@@ -10,11 +10,11 @@
   
   .circle {
     position: absolute;
-    top: 55%; /* Adjust these values to position the dot */
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    background: blue;
+    top: 40%; /* Adjust these values to position the dot */
+    left: 55%;
+    width: 15px;
+    height: 15px;
+    background: rgb(255, 0, 76);
     border-radius: 50%;
     cursor: pointer;
   }

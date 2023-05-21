@@ -8,7 +8,7 @@ Modal.setAppElement("#__next");
 
 const customStyles = {
   content: {
-    width: "500px", // Increase this to make the modal wider
+    width: "800px", // Increase this to make the modal wider
     height: "600px",
     margin: "auto",
   },
@@ -42,7 +42,7 @@ function StructureModal({
         />
       </div>
       <br />
-      <label>Upload Structure Photo:</label>
+      <label className="text-black">Upload Structure Photo:</label>
       <input
         className="mb-6"
         type="file"
@@ -51,37 +51,9 @@ function StructureModal({
       />
 
       <br />
-      <div className={styles.inputField}>
-        <label>X Coordinate:</label>
-        <input
-          name="xCoordinate"
-          placeholder="Rhino X Coordinate"
-          value={currentStructure.xCoordinate}
-          onChange={handleInputChange}
-        />
-      </div>
+
       <br />
-      <div className={styles.inputField}>
-        <label>Y Coordinate:</label>
-        <input
-          name="yCoordinate"
-          placeholder="Rhino Y Coordinate"
-          value={currentStructure.yCoordinate}
-          onChange={handleInputChange}
-        />
-      </div>
-      <br />
-      <div className={styles.inputField}>
-        <label>Z Coordinate:</label>
-        <input
-          name="zCoordinate"
-          placeholder="Rhino Z Coordinate"
-          value={currentStructure.zCoordinate}
-          onChange={handleInputChange}
-        />
-      </div>
-      <br />
-      <label>Upload Rhino3D File:</label>
+      <label className="text-black">Upload Rhino3D File:</label>
       <input
         className="mb-6"
         type="file"
